@@ -1,6 +1,14 @@
 sudo: required
 services:
   - docker
+branches:
+  except:
+  - devel
+  - experimental
+
+  only:
+  - master
+  - stable
 env:
   global:
     - SHA=$(git rev-parse HEAD)
